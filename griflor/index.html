@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griflor Deco — Plantas Artificiales Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,300;1,700&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+<div class="cursor-label" id="curLabel">Ver producto</div>
+
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div class="cart-title">Tu carrito</div>
+    <button class="cart-close" onclick="closeCart()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <p>Tu carrito está vacío</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">
+      <span class="cart-sub-lbl">Subtotal</span>
+      <span class="cart-sub-val" id="cartTotal">$0</span>
+    </div>
+    <div class="cart-note">3 cuotas sin interés · 10% OFF transferencia</div>
+    <button class="cart-btn-primary" onclick="document.getElementById('cartWa').click()">Consultar disponibilidad</button>
+    <a class="cart-btn-wa" href="#" id="cartWa" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Consultar por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- MENU OVERLAY -->
+<div class="menu-ov" id="menuOv">
+  <div class="menu-ov-inner">
+    <div class="menu-top">
+      <img src="images/logoGriFlor.png" alt="Griflor" style="height:36px;object-fit:contain">
+      <button class="nav-btn ul" style="color:rgba(244,239,230,.5)" onclick="closeMenu()">Cerrar</button>
+    </div>
+    <div class="menu-links">
+      <div class="menu-link" onclick="closeMenu();goTo('hero')">Inicio</div>
+      <div class="menu-link" onclick="closeMenu();goTo('catalogo')">Plantas</div>
+      <div class="menu-link" onclick="closeMenu();goTo('catalogo')">Flores</div>
+      <div class="menu-link" onclick="closeMenu();goTo('catalogo')">Jardines verticales</div>
+      <div class="menu-link" onclick="closeMenu();goTo('naturaleza')">Nosotros</div>
+      <div class="menu-link" onclick="closeMenu();goTo('contactanos')">Contactanos</div>
+    </div>
+    <div class="menu-foot">
+      <div><div class="mfl">Instagram</div><div class="mfv">@griflordeco</div></div>
+      <div><div class="mfl">WhatsApp</div><div class="mfv">+54 11 6154 4377</div></div>
+      <div><div class="mfl">Coleccion</div><div class="mfv">No. 01 2025</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="gal-area" id="galArea">
+    <div class="gal-viewport">
+      <div class="gal-track" id="galTrack"></div>
+    </div>
+    <button class="gal-close" onclick="event.stopPropagation();closeModal()">HOME</button>
+    <span class="gal-counter" id="galCounter">1 / 1</span>
+    <button class="gal-prev" onclick="event.stopPropagation();prevImg()">&#8592;</button>
+    <button class="gal-next" onclick="event.stopPropagation();nextImg()">&#8594;</button>
+    <div class="gal-thumbs" id="galThumbs"></div>
+  </div>
+  <div class="modal-info">
+    <div class="modal-variety" id="modalVariety"></div>
+    <div class="modal-name" id="modalName"></div>
+    <div class="modal-row"><div class="modal-lbl">Precio</div><div class="modal-val price" id="modalPrice"></div></div>
+    <div class="modal-row"><div class="modal-lbl">Altura</div><div class="modal-val" id="modalHeight"></div></div>
+    <div class="modal-row"><div class="modal-lbl">Cuotas</div><div class="modal-val">3 sin interes</div></div>
+    <div class="modal-desc" id="modalDesc"></div>
+    <div class="modal-btns">
+      <button class="modal-add" onclick="addToCart(curP)">Agregar al carrito</button>
+      <button class="modal-fav"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="logo-wrap"><img src="images/logoGriFlor.png" alt="Griflor Deco"></div>
+  <div class="nav-right">
+    <button class="nav-btn" id="cartBtn" onclick="openCart()">Carrito (0)</button>
+    <button class="nav-btn ul" onclick="openMenu()">Home</button>
+  </div>
+</nav>
+
+<div class="promo">Envios gratis CABA y GBA desde $100.000 &nbsp;&middot;&nbsp; 3 cuotas sin interes &nbsp;&middot;&nbsp; 10% OFF transferencia</div>
+
+<!-- HERO -->
+<section class="hero has-video" id="hero">
+  <video class="hero-bg" id="heroVideo" autoplay muted loop playsinline preload="auto">
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-cart" id="heroTitle">
+    <div class="collection">Coleccion<br>2026</div>
+    <div class="place">Argentina</div>
+    <div class="years">25 anos en el mercado</div>
+  </div>
+  <div class="hero-scroll"><div class="sl"></div><div class="scroll-txt">Scroll</div></div>
+</section>
+
+<!-- STRIP -->
+<section class="strip-section">
+  <div class="sec-hdr reveal">
+    <div class="sec-it">Mas vendidas</div>
+    <a class="see-all" href="#" onclick="event.preventDefault();goTo('catalogo')">Ver todas</a>
+  </div>
+  <div class="strip" id="mainStrip">
+    <div class="strip-card active" onclick="openModal(0)">
+      <div class="strip-card-inner"><img class="sc-img" src="images/planta1.webp" alt="Palmera"><div class="sc-ov"></div><div class="sc-info"><div class="sc-cat">Plantas grandes</div><div class="sc-name">Palmera Areca</div><div class="sc-price"><span class="sc-currency">ARS</span><span class="sc-amount">95.000</span><span class="sc-cents">,00</span></div></div></div>
+    </div>
+    <div class="strip-card" onclick="openModal(3)">
+      <div class="strip-card-inner"><img class="sc-img" src="images/planta4.webp" alt="Strelitzia"><div class="sc-ov"></div><div class="sc-info"><div class="sc-cat">Bestseller</div><div class="sc-name">Strelitzia</div><div class="sc-price"><span class="sc-currency">ARS</span><span class="sc-amount">88.000</span><span class="sc-cents">,00</span></div></div></div>
+    </div>
+    <div class="strip-card" onclick="openModal(5)">
+      <div class="strip-card-inner"><img class="sc-img" src="images/planta66.webp" alt="Thaumatophyllum"><div class="sc-ov"></div><div class="sc-info"><div class="sc-cat">Plantas tropicales</div><div class="sc-name">Thaumatophyllum</div><div class="sc-price"><span class="sc-currency">ARS</span><span class="sc-amount">82.000</span><span class="sc-cents">,00</span></div></div></div>
+    </div>
+    <div class="strip-card" onclick="openModal(6)">
+      <div class="strip-card-inner"><img class="sc-img" src="images/planta77.webp" alt="Monstera"><div class="sc-ov"></div><div class="sc-info"><div class="sc-cat">Plantas clasicas</div><div class="sc-name">Monstera Deliciosa</div><div class="sc-price"><span class="sc-currency">ARS</span><span class="sc-amount">58.000</span><span class="sc-cents">,00</span></div></div></div>
+    </div>
+    <div class="strip-card" onclick="openModal(7)">
+      <div class="strip-card-inner"><img class="sc-img" src="images/planta8.webp" alt="Pilea"><div class="sc-ov"></div><div class="sc-info"><div class="sc-cat">Colgantes</div><div class="sc-name">Pilea Colgante</div><div class="sc-price"><span class="sc-currency">ARS</span><span class="sc-amount">34.000</span><span class="sc-cents">,00</span></div></div></div>
+    </div>
+    <div class="strip-card" onclick="openModal(2)">
+      <div class="strip-card-inner"><img class="sc-img" src="images/planta333.webp" alt="Bambu"><div class="sc-ov"></div><div class="sc-info"><div class="sc-cat">Decorativas</div><div class="sc-name">Bambu</div><div class="sc-price"><span class="sc-currency">ARS</span><span class="sc-amount">72.000</span><span class="sc-cents">,00</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-trust">
+  <div class="marquee-track">
+    <span class="mq-phrase">Envíos a todo el país</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">3 cuotas sin interés</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">10% OFF transferencia</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">Envíos a todo el país</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">3 cuotas sin interés</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">10% OFF transferencia</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">Envíos a todo el país</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">3 cuotas sin interés</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">10% OFF transferencia</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">Envíos a todo el país</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">3 cuotas sin interés</span><span class="mq-sep">◆</span>
+    <span class="mq-phrase">10% OFF transferencia</span><span class="mq-sep">◆</span>
+  </div>
+</div>
+
+<!-- PRODUCTS GRID -->
+<section class="products-section reveal" id="catalogo">
+  <div class="products-header">
+    <div class="products-title">Catalogo</div>
+    <div class="products-count">08 productos</div>
+  </div>
+  <div class="pgrid">
+    <div class="pcard" onclick="openModal(0)">
+      <div class="pcard-img"><img src="images/planta11.webp" alt="Palmera"><div class="pcard-bar">Ver producto</div><span class="pcard-badge badge-terra">Premium</span></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas grandes</div><div class="pcard-name">Palmera Areca Doble Tronco</div><div class="pcard-bottom"><div><div class="pcard-price">$95.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(1)">
+      <div class="pcard-img"><img src="images/planta2.webp" alt="Alocasia"><div class="pcard-bar">Ver producto</div></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas grandes</div><div class="pcard-name">Alocasia Oreja de Elefante</div><div class="pcard-bottom"><div><div class="pcard-price">$64.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(2)">
+      <div class="pcard-img"><img src="images/planta333.webp" alt="Bambu"><div class="pcard-bar">Ver producto</div><span class="pcard-badge badge-olive">Nuevo</span></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas decorativas</div><div class="pcard-name">Bambu Decorativo</div><div class="pcard-bottom"><div><div class="pcard-price">$72.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(3)">
+      <div class="pcard-img"><img src="images/planta44.webp" alt="Strelitzia"><div class="pcard-bar">Ver producto</div><span class="pcard-badge badge-terra">Bestseller</span></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas grandes</div><div class="pcard-name">Strelitzia Ave del Paraiso</div><div class="pcard-bottom"><div><div class="pcard-price">$88.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(4)">
+      <div class="pcard-img"><img src="images/planta5.webp" alt="Filodendro"><div class="pcard-bar">Ver producto</div></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas tropicales</div><div class="pcard-name">Filodendro Variegado</div><div class="pcard-bottom"><div><div class="pcard-price">$76.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(5)">
+      <div class="pcard-img"><img src="images/planta6.webp" alt="Thaumatophyllum"><div class="pcard-bar">Ver producto</div><span class="pcard-badge badge-olive">Nuevo</span></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas tropicales</div><div class="pcard-name">Thaumatophyllum</div><div class="pcard-bottom"><div><div class="pcard-price">$82.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(6)">
+      <div class="pcard-img"><img src="images/planta7.webp" alt="Monstera"><div class="pcard-bar">Ver producto</div></div>
+      <div class="pcard-info"><div class="pcard-variety">Plantas clasicas</div><div class="pcard-name">Monstera Deliciosa</div><div class="pcard-bottom"><div><div class="pcard-price">$58.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+    <div class="pcard" onclick="openModal(7)">
+      <div class="pcard-img"><img src="images/planta888.webp" alt="Pilea"><div class="pcard-bar">Ver producto</div><span class="pcard-badge badge-terra">Nuevo</span></div>
+      <div class="pcard-info"><div class="pcard-variety">Colgantes y guias</div><div class="pcard-name">Pilea Colgante</div><div class="pcard-bottom"><div><div class="pcard-price">$34.000</div><div class="pcard-cuotas">3 cuotas sin interes</div></div><div class="pcard-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MID BANNER -->
+<section class="mid-banner reveal" id="naturaleza">
+  <img src="images/banner-mid.png" alt="Griflor Deco" class="mid-banner-img">
+  <div class="mid-banner-overlay"></div>
+  <div class="mid-banner-content">
+    <div class="mid-banner-eyebrow">Importadores directos &middot; Argentina</div>
+    <h2 class="mid-banner-title">Naturaleza<br>sin tiempo.<br>Elegancia<br>sin mantenimiento.</h2>
+    <a href="#" class="mid-banner-cta">Ver coleccion completa</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about reveal" id="nosotros">
+  <div class="about-left">
+    <div>
+      <div class="about-eyebrow">Sobre Griflor Deco</div>
+      <div class="about-body">
+        <p>En Griflor Deco somos importadores y especialistas en plantas y flores artificiales de calidad premium, con más de 20 años de experiencia en el mercado de la decoración.</p>
+        <p>Nacimos con una visión clara: transformar espacios con soluciones verdes, elegantes y sin mantenimiento. Creemos que cada ambiente —hogar, oficina, local comercial o evento— merece transmitir vida, estilo y personalidad, sin depender del riego, la luz natural o el paso del tiempo.</p>
+      </div>
+    </div>
+    <span class="about-cta">Conocernos</span>
+  </div>
+  <div class="about-right">
+    <div class="reveal rd1"><div class="num-big">20+</div><div class="num-label">Anos en el mercado</div><div class="num-rule"></div></div>
+    <div class="reveal rd2"><div class="num-big">10k</div><div class="num-label">Clientes satisfechos</div><div class="num-rule"></div></div>
+    <div class="reveal rd3"><div class="num-big">500+</div><div class="num-label">Productos disponibles</div></div>
+  </div>
+</div>
+
+<!-- CONFIAN EN NOSOTROS -->
+<section class="confian reveal">
+  <div class="sec-hdr" style="justify-content:center;padding-bottom:0">
+    <div class="sec-it">Confian en nosotros</div>
+  </div>
+  <div class="confian-logos">
+    <img src="images/confian.png" alt="Marcas que confian en Griflor Deco">
+  </div>
+  <div style="text-align:center">
+    <a href="https://instagram.com/griflordeco" class="confian-ig" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      Seguinos en @griflordeco
+    </a>
+  </div>
+</section>
+
+<!-- GRIFLOR NEWS -->
+<section class="newsletter reveal" id="contactanos">
+  <div class="news-bg"></div>
+  <div class="news-overlay"></div>
+  <div class="newsletter-inner">
+    <div class="news-title">Griflor News</div>
+    <p class="news-sub">¿Querés recibir nuestras ofertas? ¡Suscribite HOY mismo a nuestro diario!</p>
+    <form class="news-form" id="newsForm">
+      <input type="email" class="news-input" placeholder="Tu correo electronico..." required>
+      <button type="submit" class="news-btn">Suscribirme</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><img src="images/logoGriFlor.png" alt="Griflor Deco"></div>
+      <div class="footer-desc">Importadores directos de plantas y flores artificiales premium. San Miguel, Buenos Aires.</div>
+    </div>
+    <div class="fcol"><div class="fcol-title">Productos</div><ul><li><a href="#">Plantas Artificiales</a></li><li><a href="#">Flores Artificiales</a></li><li><a href="#">Jardines Verticales</a></li><li><a href="#">Macetas</a></li></ul></div>
+    <div class="fcol"><div class="fcol-title">Informacion</div><ul><li><a href="#">Como comprar</a></li><li><a href="#">Envios</a></li><li><a href="#">Postventa</a></li><li><a href="#">Mayorista</a></li></ul></div>
+    <div class="fcol"><div class="fcol-title">Contacto</div><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Instagram</a></li><li><a href="#">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>2025 Griflor Deco</span><span>Mercado Pago - Visa - Mastercard - Transferencia</span></div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5491161544377" class="wsp-float" target="_blank" rel="noopener" title="Contactanos por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
