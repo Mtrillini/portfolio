@@ -662,29 +662,41 @@ section[id] {
     margin-top: 36px;
 }
 
-.location {
-    display: inline-flex;
+/* --- Guía vertical del hero: la línea que baja desde el 01
+   y termina en tres puntos --- */
+
+.hero-rail {
+    position: absolute;
+    left: 7px;
+    top: 42px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-top: 26px;
-    color: var(--fg-muted);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: .06em;
+    gap: 16px;
 }
 
-.location .status-dot {
-    width: 8px;
-    height: 8px;
+.hero-rail-line {
+    flex: 1;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        var(--border-strong),
+        var(--border)
+    );
+}
+
+.hero-rail-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.hero-rail-dots span {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: var(--lime-ink);
-    animation: pulse 2.8s ease-out infinite;
-}
-
-@keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(217, 246, 58, .55); }
-    70%  { box-shadow: 0 0 0 10px rgba(217, 246, 58, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(217, 246, 58, 0); }
+    background: var(--pink);
 }
 
 
@@ -697,9 +709,9 @@ section[id] {
     position: relative;
     aspect-ratio: 1400 / 1169;
     max-height: 640px;
-    background: var(--cream-light);
-    border-radius: var(--radius-lg);
-    border-color: var(--border-strong);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
 }
 
 @keyframes spin {
@@ -1396,7 +1408,8 @@ section[id] {
 /* --- Mobile --- */
 @media (max-width: 640px) {
 
-    .section-number {
+    .section-number,
+    .hero-rail {
         display: none;
     }
 
