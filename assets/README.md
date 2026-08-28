@@ -7,7 +7,10 @@ el sitio muestra el contenedor reservado con la ruta esperada
 | Archivo | Dónde se usa | Proporción sugerida | Medida recomendada |
 | --- | --- | --- | --- |
 | `hero-visual.jpg` | Contenedor visual del hero | ~4:4.4 (vertical) | 900 × 990 px |
-| `nuve.jpg` | Captura de NÜVE (nuvearg.com) | 16:10 | 1200 × 750 px |
+| `nuve-main.jpg` | NÜVE · captura general (home) | 16:9 | 1600 × 900 px |
+| `nuve-1.jpg` | NÜVE · catálogo | 4:3 | 800 × 600 px |
+| `nuve-2.jpg` | NÜVE · panel admin (productos) | 4:3 | 800 × 600 px |
+| `nuve-3.jpg` | NÜVE · panel admin (editar producto) | 4:3 | 800 × 600 px |
 | `kabodhi.jpg` | Captura de Kabodhi (kabodhi.online) | 16:10 | 1200 × 750 px |
 | `griflor-main.jpg` | Griflor · captura general (arriba) | 16:9 | 1600 × 900 px |
 | `griflor-1.jpg` | Griflor · captura chica 1 | 4:3 | 800 × 600 px |
