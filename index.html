@@ -190,43 +190,53 @@
      FRANJA RESUMEN
 ========================= -->
 
+<!--
+    Los iconos son PNG en /assets. Mientras el archivo no exista
+    se muestra el glifo de respaldo que está al lado.
+-->
+
 <section class="summary" aria-label="Resumen de perfil" data-reveal>
 
-    <article class="summary-item">
+    <article class="summary-item summary-lead">
         <strong class="big-number">2+</strong>
-        <span>AÑOS DE<br>EXPERIENCIA</span>
+        <p class="summary-label">AÑOS DE<br>EXPERIENCIA</p>
+        <span class="summary-dash" aria-hidden="true"></span>
     </article>
 
     <article class="summary-item">
-        <span class="summary-icon pink" aria-hidden="true">&lt;/&gt;</span>
-        <div>
-            <strong>DEVELOPER</strong>
-            <p>PHP · MySQL<br>JavaScript · React</p>
-        </div>
+        <span class="summary-media" aria-hidden="true">
+            <img class="summary-icon" src="assets/icon-developer.png" alt="" width="48" height="48" decoding="async">
+            <span class="summary-glyph pink">&lt;/&gt;</span>
+        </span>
+        <strong class="summary-title">DEVELOPER</strong>
+        <p>PHP · MySQL<br>JavaScript · React</p>
     </article>
 
     <article class="summary-item">
-        <span class="summary-icon lime" aria-hidden="true">✎</span>
-        <div>
-            <strong>UX/UI DESIGN</strong>
-            <p>Figma · Wireframes<br>User Research</p>
-        </div>
+        <span class="summary-media" aria-hidden="true">
+            <img class="summary-icon" src="assets/icon-uxui.png" alt="" width="48" height="48" decoding="async">
+            <span class="summary-glyph lime">✎</span>
+        </span>
+        <strong class="summary-title">UX/UI DESIGN</strong>
+        <p>Figma · Wireframes<br>User Research</p>
     </article>
 
     <article class="summary-item">
-        <span class="summary-icon pink" aria-hidden="true">▣</span>
-        <div>
-            <strong>DESIGN</strong>
-            <p>Photoshop<br>Illustrator</p>
-        </div>
+        <span class="summary-media" aria-hidden="true">
+            <img class="summary-icon" src="assets/icon-design.png" alt="" width="48" height="48" decoding="async">
+            <span class="summary-glyph pink">▣</span>
+        </span>
+        <strong class="summary-title">DESIGN</strong>
+        <p>Photoshop<br>Illustrator</p>
     </article>
 
     <article class="summary-item">
-        <span class="summary-icon lime" aria-hidden="true">◉</span>
-        <div>
-            <strong>HERRAMIENTAS</strong>
-            <p>Git · GitHub<br>VS Code · Postman</p>
-        </div>
+        <span class="summary-media" aria-hidden="true">
+            <img class="summary-icon" src="assets/icon-tools.png" alt="" width="48" height="48" decoding="async">
+            <span class="summary-glyph lime">◉</span>
+        </span>
+        <strong class="summary-title">HERRAMIENTAS</strong>
+        <p>Git · GitHub<br>VS Code · Postman</p>
     </article>
 
 </section>

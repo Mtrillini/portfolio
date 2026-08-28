@@ -21,6 +21,20 @@ el sitio muestra el contenedor reservado con la ruta esperada
 | `griflor-3.jpg` | Griflor · captura chica 3 | 4:3 | 800 × 600 px |
 | `og-cover.jpg` | Vista previa al compartir el link | 1.91:1 | 1200 × 630 px |
 
+## Iconos de la franja resumen
+
+PNG con fondo transparente, cuadrados. Se muestran a 44 px,
+así que conviene exportarlos a 96 px para que se vean nítidos
+en pantallas retina. Mientras el archivo no exista, la franja
+muestra el glifo de respaldo y no se ve ninguna imagen rota.
+
+| Archivo | Bloque |
+| --- | --- |
+| `icon-developer.png` | DEVELOPER |
+| `icon-uxui.png` | UX/UI DESIGN |
+| `icon-design.png` | DESIGN |
+| `icon-tools.png` | HERRAMIENTAS |
+
 ## Notas
 
 - Usar capturas reales del sistema o la web, no ilustraciones genéricas.
