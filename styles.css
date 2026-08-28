@@ -1032,15 +1032,20 @@ section[id] {
     grid-template-rows: minmax(0, 1fr) 185px;
     gap: 14px;
     padding: 16px;
+    background: var(--surface-solid);
+    /* Franja de color que marca la galería */
+    border-top: 10px solid var(--pink);
 }
 
-.project-gallery.tint-pink { background: #f3a6cb; }
-.project-gallery.tint-lime { background: var(--lime); }
+.project-gallery.tint-lime {
+    border-top-color: var(--lime);
+}
 
 .gallery-main {
     min-height: 390px;
     border: 0;
     border-radius: 10px;
+    box-shadow: 0 12px 28px -22px rgba(16, 16, 16, .6);
 }
 
 .gallery-main:hover img {
