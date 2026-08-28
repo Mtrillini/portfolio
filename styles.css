@@ -688,84 +688,23 @@ section[id] {
 }
 
 
-/* --- Contenedor visual reservado del HERO ---
-   Espacio para la composición gráfica propia.
-   NO reemplazar por una fotografía personal.
+/* --- Composición visual del HERO ---
+   Ilustración propia, no una fotografía personal.
    Archivo esperado: assets/hero-visual.jpg
 ------------------------------------------------ */
 
 .hero-visual {
     position: relative;
-    aspect-ratio: 4 / 4.4;
-    max-height: 620px;
+    aspect-ratio: 1400 / 1169;
+    max-height: 640px;
+    background: var(--cream-light);
     border-radius: var(--radius-lg);
     border-color: var(--border-strong);
-}
-
-.hero-visual .hero-star {
-    position: absolute;
-    z-index: 3;
-    right: 26px;
-    top: 12px;
-    color: var(--lime);
-    font-size: clamp(56px, 7vw, 92px);
-    line-height: 1;
-    animation: spin 22s linear infinite;
 }
 
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
-
-.hero-visual .hero-message {
-    position: absolute;
-    z-index: 3;
-    left: clamp(20px, 4vw, 50px);
-    bottom: clamp(24px, 4vw, 45px);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 12px 16px;
-    background: var(--lime);
-    color: var(--black);
-    border-radius: 3px;
-    box-shadow: var(--shadow);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: .06em;
-}
-
-.hero-visual .hero-message strong {
-    font-size: 15px;
-    letter-spacing: -.01em;
-}
-
-.pixels {
-    position: absolute;
-    z-index: 3;
-    right: 25px;
-    bottom: 25px;
-    width: 114px;
-    height: 114px;
-}
-
-.pixels span {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    background: var(--black);
-}
-
-[data-theme="dark"] .pixels span {
-    background: var(--cream);
-}
-
-.pixels span:nth-child(1) { right: 0;    bottom: 0; }
-.pixels span:nth-child(2) { right: 38px; bottom: 0; }
-.pixels span:nth-child(3) { right: 38px; bottom: 38px; }
-.pixels span:nth-child(4) { right: 76px; bottom: 38px; }
-.pixels span:nth-child(5) { right: 0;    bottom: 76px; }
-
 
 /* =========================================================
    06 · FRANJA RESUMEN
@@ -913,109 +852,161 @@ section[id] {
 
 /* =========================================================
    08 · PROYECTOS
-   Las capturas son las protagonistas: ocupan la mayor parte
-   de cada tarjeta y alternan de lado.
+   Tarjeta editorial: a la izquierda el relato del proyecto,
+   a la derecha la galería (una captura general + tres chicas).
+   Las tarjetas pares invierten el orden de las columnas.
    ========================================================= */
 
 .projects-list {
     display: grid;
-    gap: clamp(24px, 3vw, 38px);
+    gap: clamp(28px, 3.4vw, 60px);
 }
 
 .project-card {
     display: grid;
-    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    grid-template-columns: 37% 63%;
+    min-height: 650px;
     overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
+    background: var(--surface-solid);
+    border: 1px solid var(--border-strong);
+    border-radius: 18px;
     transition:
-        transform var(--base) var(--ease),
         border-color var(--base) var(--ease),
         box-shadow var(--base) var(--ease);
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
     border-color: var(--pink);
     box-shadow: var(--shadow-lg);
 }
 
-/* La captura cambia de lado en las tarjetas pares */
-.project-card:nth-child(even) .project-media {
-    order: -1;
-    border-left: 0;
-    border-right: 1px solid var(--border);
+/* Tarjetas pares: galería a la izquierda */
+.project-card:nth-child(even) {
+    grid-template-columns: 63% 37%;
 }
+
+.project-card:nth-child(even) .project-info {
+    order: 2;
+    border-right: 0;
+    border-left: 1px solid var(--border-strong);
+}
+
+
+/* --- Columna de información --- */
 
 .project-info {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding: clamp(26px, 3vw, 42px);
+    padding: clamp(34px, 3.4vw, 55px) clamp(26px, 2.8vw, 45px);
+    border-right: 1px solid var(--border-strong);
+}
+
+.project-index {
+    display: flex;
+    gap: 12px;
+    margin-bottom: clamp(38px, 4.4vw, 65px);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: var(--fg-muted);
+}
+
+.project-index span:first-child {
+    position: relative;
+    color: var(--fg);
+}
+
+.project-index span:first-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 30px;
+    height: 2px;
+    background: var(--pink);
 }
 
 .project-category {
-    align-self: flex-start;
-    padding: 6px 9px;
+    width: fit-content;
+    margin-bottom: 25px;
+    padding: 7px 12px;
     background: var(--lime);
     color: var(--black);
     border-radius: 3px;
     font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .14em;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
 }
 
 .project-card h3 {
-    font-size: clamp(30px, 3.4vw, 44px);
-    line-height: 1;
+    margin-bottom: 25px;
+    font-size: clamp(42px, 4.6vw, 75px);
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -.06em;
 }
 
-.project-card p {
-    max-width: 46ch;
-    font-size: 15px;
+.project-symbol {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--pink-ink);
+    font-size: 48px;
+    line-height: 1;
+    transition: transform var(--slow) var(--ease);
+}
+
+.project-card:hover .project-symbol {
+    transform: rotate(180deg);
+}
+
+.project-description {
+    max-width: 44ch;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--fg-soft);
+}
+
+.project-description + .project-description {
+    margin-top: 14px;
+}
+
+
+/* --- Pie de la columna: tags + link --- */
+
+.project-bottom {
+    margin-top: auto;
+    padding-top: 40px;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin-top: auto;
+    gap: 10px;
+    margin-bottom: clamp(28px, 3vw, 45px);
 }
 
 .tags li {
-    padding: 6px 10px;
+    padding: 8px 14px;
     border: 1px solid var(--border-strong);
     border-radius: 3px;
     font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .08em;
-    transition:
-        background-color var(--base) var(--ease),
-        border-color var(--base) var(--ease),
-        color var(--base) var(--ease);
-}
-
-.project-card:hover .tags li {
-    background: var(--fg);
-    border-color: var(--fg);
-    color: var(--bg);
+    font-size: 11px;
+    letter-spacing: .04em;
 }
 
 .project-link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    align-self: flex-start;
-    padding-bottom: 4px;
+    gap: 12px;
+    width: fit-content;
+    padding-bottom: 8px;
     border-bottom: 2px solid var(--pink);
     font-family: var(--font-mono);
     font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .1em;
+    font-weight: 700;
+    letter-spacing: .08em;
     text-transform: uppercase;
     transition:
         gap var(--base) var(--ease),
@@ -1023,7 +1014,7 @@ section[id] {
 }
 
 .project-link:hover {
-    gap: 16px;
+    gap: 20px;
     color: var(--pink-ink);
 }
 
@@ -1034,54 +1025,50 @@ section[id] {
 }
 
 
-/* --- Zona de captura --- */
+/* --- Galería --- */
 
-.project-media {
-    position: relative;
-    display: block;
-    min-height: clamp(300px, 32vw, 460px);
+.project-gallery {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) 185px;
+    gap: 14px;
+    padding: 16px;
+}
+
+.project-gallery.tint-pink { background: #f3a6cb; }
+.project-gallery.tint-lime { background: var(--lime); }
+
+.gallery-main {
+    min-height: 390px;
     border: 0;
-    border-left: 1px solid var(--border);
+    border-radius: 10px;
 }
 
-.project-media.tint-pink { background: #f3a6cb; }
-.project-media.tint-lime { background: var(--lime); }
-
-.project-card:hover .project-media img {
-    transform: scale(1.045);
+.gallery-main:hover img {
+    transform: scale(1.015);
 }
 
-
-/* --- Galería: una captura general + tres chiquitas --- */
-
-.project-media.project-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 14px;
-    overflow: hidden;
-}
-
-.project-gallery .shot {
-    border-radius: 6px;
-}
-
-.project-gallery .shot-main {
-    flex: 1 1 auto;
-    min-height: 180px;
-}
-
-.project-gallery .shot-row {
+.gallery-thumbnails {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
+    gap: 14px;
 }
 
-.project-gallery .shot-row .shot {
-    aspect-ratio: 4 / 3;
+.gallery-thumbnail {
+    height: 185px;
+    border-radius: 9px;
+    border-color: rgba(16, 16, 16, .12);
 }
 
-.project-gallery .shot-row .media-hint {
+.gallery-thumbnail:hover img {
+    transform: scale(1.035);
+}
+
+/* Las capturas son de páginas: se muestran desde arriba */
+.project-gallery img {
+    object-position: top center;
+}
+
+.gallery-thumbnail .media-hint {
     padding: 8px;
     font-size: 9px;
     letter-spacing: .08em;
@@ -1090,36 +1077,6 @@ section[id] {
 .project-gallery .media-hint code {
     max-width: 100%;
     overflow-wrap: anywhere;
-}
-
-/* La captura general es la que hace el zoom en hover */
-.project-card:hover .project-gallery .shot-row img {
-    transform: none;
-}
-
-.project-arrow {
-    position: absolute;
-    z-index: 3;
-    right: 16px;
-    bottom: 16px;
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--pink);
-    color: #fff;
-    font-size: 17px;
-    transition:
-        transform var(--base) var(--ease),
-        background-color var(--base) var(--ease),
-        color var(--base) var(--ease);
-}
-
-.project-card:hover .project-arrow {
-    transform: translate(4px, -4px) scale(1.08);
-    background: var(--black);
-    color: var(--lime);
 }
 
 
@@ -1323,7 +1280,6 @@ section[id] {
     }
 
     .hero-visual {
-        aspect-ratio: 16 / 11;
         max-height: none;
     }
 
@@ -1402,17 +1358,32 @@ section[id] {
         bottom: 10px;
     }
 
-    .project-card {
+    /* La tarjeta se apila: primero el relato, después la galería */
+    .project-card,
+    .project-card:nth-child(even) {
         grid-template-columns: 1fr;
+        min-height: 0;
     }
 
-    .project-card .project-media,
-    .project-card:nth-child(even) .project-media {
-        order: -1;
+    .project-card .project-info,
+    .project-card:nth-child(even) .project-info {
+        order: 0;
+        min-height: 480px;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--border-strong);
+    }
+
+    .project-gallery {
+        grid-template-rows: clamp(300px, 46vw, 500px) 180px;
+    }
+
+    .gallery-main {
         min-height: 0;
-        aspect-ratio: 16 / 10;
-        border: 0;
-        border-bottom: 1px solid var(--border);
+    }
+
+    .gallery-thumbnail {
+        height: 180px;
     }
 }
 
@@ -1454,6 +1425,40 @@ section[id] {
         padding-left: 20px;
     }
 
+    .project-card .project-info {
+        min-height: 0;
+        padding: 35px 25px;
+    }
+
+    .project-card h3 {
+        font-size: 52px;
+    }
+
+    .project-bottom {
+        padding-top: 34px;
+    }
+
+    /* En mobile las tres capturas van una debajo de otra
+       para que no queden diminutas */
+    .project-gallery {
+        display: block;
+        padding: 10px;
+    }
+
+    .gallery-main {
+        height: 330px;
+        margin-bottom: 10px;
+    }
+
+    .gallery-thumbnails {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .gallery-thumbnail {
+        height: 260px;
+    }
+
     .concept-card {
         grid-template-columns: auto 1fr;
         row-gap: 20px;
@@ -1478,22 +1483,6 @@ section[id] {
         text-align: center;
     }
 
-    .pixels {
-        right: 18px;
-        bottom: 18px;
-        width: 76px;
-        height: 76px;
-    }
-
-    .pixels span {
-        width: 25px;
-        height: 25px;
-    }
-
-    .pixels span:nth-child(2) { right: 25px; bottom: 0; }
-    .pixels span:nth-child(3) { right: 25px; bottom: 25px; }
-    .pixels span:nth-child(4) { right: 50px; bottom: 25px; }
-    .pixels span:nth-child(5) { right: 0;    bottom: 50px; }
 }
 
 

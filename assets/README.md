@@ -6,12 +6,15 @@ el sitio muestra el contenedor reservado con la ruta esperada
 
 | Archivo | Dónde se usa | Proporción sugerida | Medida recomendada |
 | --- | --- | --- | --- |
-| `hero-visual.jpg` | Contenedor visual del hero | ~4:4.4 (vertical) | 900 × 990 px |
+| `hero-visual.jpg` | Composición del hero | ~6:5 | 1400 × 1169 px |
 | `nuve-main.jpg` | NÜVE · captura general (home) | 16:9 | 1600 × 900 px |
 | `nuve-1.jpg` | NÜVE · catálogo | 4:3 | 800 × 600 px |
 | `nuve-2.jpg` | NÜVE · panel admin (productos) | 4:3 | 800 × 600 px |
 | `nuve-3.jpg` | NÜVE · panel admin (editar producto) | 4:3 | 800 × 600 px |
-| `kabodhi.jpg` | Captura de Kabodhi (kabodhi.online) | 16:10 | 1200 × 750 px |
+| `kabodhi-main.jpg` | Kabodhi · captura general (home) | 16:9 | 1600 × 900 px |
+| `kabodhi-1.jpg` | Kabodhi · tienda con filtros | 4:3 | 800 × 600 px |
+| `kabodhi-2.jpg` | Kabodhi · sección melena de león | 4:3 | 800 × 600 px |
+| `kabodhi-3.jpg` | Kabodhi · panel admin | 4:3 | 800 × 600 px |
 | `griflor-main.jpg` | Griflor · captura general (arriba) | 16:9 | 1600 × 900 px |
 | `griflor-1.jpg` | Griflor · captura chica 1 | 4:3 | 800 × 600 px |
 | `griflor-2.jpg` | Griflor · captura chica 2 | 4:3 | 800 × 600 px |

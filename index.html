@@ -152,10 +152,10 @@
 
     <!--
         ============================================
-        CONTENEDOR VISUAL RESERVADO DEL HERO
-        Espacio para la composición gráfica propia.
-        Archivo esperado: assets/hero-visual.jpg
-        NO usar fotografía personal.
+        COMPOSICIÓN VISUAL DEL HERO
+        Ilustración propia (no fotografía personal).
+        Para cambiarla: reemplazar assets/hero-visual.jpg
+        manteniendo la proporción 1400 x 1169.
         ============================================
     -->
 
@@ -163,9 +163,9 @@
 
         <img
             src="assets/hero-visual.jpg"
-            alt="Composición visual sobre desarrollo y diseño"
-            width="900"
-            height="990"
+            alt="Ilustración de una ventana de navegador rosa con el símbolo de código y el lema código que diseña soluciones"
+            width="1400"
+            height="1169"
             fetchpriority="high"
             decoding="async"
         >
@@ -174,21 +174,6 @@
             COMPOSICIÓN VISUAL
             <code>assets/hero-visual.jpg</code>
         </figcaption>
-
-        <span class="hero-star" aria-hidden="true">✳</span>
-
-        <div class="hero-message" aria-hidden="true">
-            <span>CÓDIGO QUE</span>
-            <strong>DISEÑA SOLUCIONES</strong>
-        </div>
-
-        <div class="pixels" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
 
     </figure>
 
@@ -314,111 +299,121 @@
 
     <div class="projects-list">
 
-
         <!-- PROYECTO 01 · NÜVE -->
 
         <article class="project-card" data-reveal>
 
             <div class="project-info">
 
+                <p class="project-index">
+                    <span>01</span>
+                    <span aria-hidden="true">/</span>
+                    <span>SELECTED PROJECT</span>
+                </p>
+
                 <span class="project-category">E-COMMERCE · PERFUMERÍA</span>
 
                 <h3>NÜVE</h3>
 
-                <p>
-                    Perfumería de autor con catálogo curado y carrito
-                    propio, más un panel de administración a medida:
-                    pedidos, productos, envíos y mails automáticos
-                    de confirmación de compra.
+                <span class="project-symbol" aria-hidden="true">✳</span>
+
+                <p class="project-description">
+                    Perfumería de autor: catálogo curado, fichas de
+                    producto con notas olfativas y carrito propio,
+                    con una identidad oscura y editorial.
                 </p>
 
-                <ul class="tags">
-                    <li>JAVASCRIPT</li>
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>PANEL ADMIN</li>
-                    <li>MAILING</li>
-                </ul>
+                <p class="project-description">
+                    Del lado del sistema, un panel de administración
+                    a medida para gestionar pedidos, productos y
+                    envíos, con mails automáticos de confirmación
+                    de compra.
+                </p>
 
-                <a class="project-link" href="https://nuvearg.com" target="_blank" rel="noopener">
-                    Ver sitio
-                    <span class="arrow" aria-hidden="true">→</span>
-                    <span class="visually-hidden">NÜVE (se abre en una pestaña nueva)</span>
-                </a>
+                <div class="project-bottom">
+
+                    <ul class="tags">
+                        <li>JAVASCRIPT</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>PANEL ADMIN</li>
+                        <li>MAILING</li>
+                    </ul>
+
+                    <a class="project-link" href="https://nuvearg.com" target="_blank" rel="noopener">
+                        Ver sitio
+                        <span class="arrow" aria-hidden="true">↗</span>
+                        <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                    </a>
+
+                </div>
 
             </div>
 
-            <a class="project-media project-gallery tint-pink"
-               href="https://nuvearg.com"
-               target="_blank"
-               rel="noopener"
-               tabindex="-1"
-               aria-hidden="true">
+            <div class="project-gallery tint-pink">
 
-                <span class="shot shot-main media-frame">
+                <figure class="gallery-main media-frame">
                     <img
                         src="assets/nuve-main.jpg"
-                        alt=""
+                        alt="Home de NÜVE con el hero de perfumes"
                         width="1600"
                         height="900"
                         loading="lazy"
                         decoding="async"
                     >
-                    <span class="media-hint">
+                    <figcaption class="media-hint" aria-hidden="true">
                         CAPTURA GENERAL
                         <code>assets/nuve-main.jpg</code>
-                    </span>
-                </span>
+                    </figcaption>
+                </figure>
 
-                <span class="shot-row">
+                <div class="gallery-thumbnails">
 
-                    <span class="shot media-frame">
+                    <figure class="gallery-thumbnail media-frame">
                         <img
                             src="assets/nuve-1.jpg"
-                            alt=""
+                            alt="Catálogo de perfumes de NÜVE"
                             width="800"
                             height="600"
                             loading="lazy"
                             decoding="async"
                         >
-                        <span class="media-hint">
+                        <figcaption class="media-hint" aria-hidden="true">
                             <code>nuve-1.jpg</code>
-                        </span>
-                    </span>
+                        </figcaption>
+                    </figure>
 
-                    <span class="shot media-frame">
+                    <figure class="gallery-thumbnail media-frame">
                         <img
                             src="assets/nuve-2.jpg"
-                            alt=""
+                            alt="Panel de administración de NÜVE con el listado de productos"
                             width="800"
                             height="600"
                             loading="lazy"
                             decoding="async"
                         >
-                        <span class="media-hint">
+                        <figcaption class="media-hint" aria-hidden="true">
                             <code>nuve-2.jpg</code>
-                        </span>
-                    </span>
+                        </figcaption>
+                    </figure>
 
-                    <span class="shot media-frame">
+                    <figure class="gallery-thumbnail media-frame">
                         <img
                             src="assets/nuve-3.jpg"
-                            alt=""
+                            alt="Formulario de edición de producto en el panel de NÜVE"
                             width="800"
                             height="600"
                             loading="lazy"
                             decoding="async"
                         >
-                        <span class="media-hint">
+                        <figcaption class="media-hint" aria-hidden="true">
                             <code>nuve-3.jpg</code>
-                        </span>
-                    </span>
+                        </figcaption>
+                    </figure>
 
-                </span>
+                </div>
 
-                <span class="project-arrow">→</span>
-
-            </a>
+            </div>
 
         </article>
 
@@ -429,55 +424,115 @@
 
             <div class="project-info">
 
+                <p class="project-index">
+                    <span>02</span>
+                    <span aria-hidden="true">/</span>
+                    <span>SELECTED PROJECT</span>
+                </p>
+
                 <span class="project-category">E-COMMERCE · WELLNESS</span>
 
                 <h3>Kabodhi</h3>
 
-                <p>
-                    Tienda de hongos adaptógenos y suplementos
-                    naturales. Catálogo dinámico, carrito, carrusel
-                    de campañas y panel de gestión propio.
+                <span class="project-symbol" aria-hidden="true">✳</span>
+
+                <p class="project-description">
+                    Tienda de hongos adaptógenos con una identidad
+                    ilustrada: cada especie —melena de león, reishi,
+                    cordyceps— tiene su propia sección con beneficios
+                    y su paleta.
                 </p>
 
-                <ul class="tags">
-                    <li>JAVASCRIPT</li>
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>NETLIFY</li>
-                </ul>
+                <p class="project-description">
+                    Catálogo con filtros y buscador, carrito, carrusel
+                    de campañas editable y panel de administración de
+                    productos y pedidos sobre una API propia en PHP.
+                </p>
 
-                <a class="project-link" href="https://kabodhi.online" target="_blank" rel="noopener">
-                    Ver sitio
-                    <span class="arrow" aria-hidden="true">→</span>
-                    <span class="visually-hidden">Kabodhi (se abre en una pestaña nueva)</span>
-                </a>
+                <div class="project-bottom">
+
+                    <ul class="tags">
+                        <li>JAVASCRIPT</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>PANEL ADMIN</li>
+                        <li>NETLIFY</li>
+                    </ul>
+
+                    <a class="project-link" href="https://kabodhi.online" target="_blank" rel="noopener">
+                        Ver sitio
+                        <span class="arrow" aria-hidden="true">↗</span>
+                        <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                    </a>
+
+                </div>
 
             </div>
 
-            <a class="project-media media-frame tint-lime"
-               href="https://kabodhi.online"
-               target="_blank"
-               rel="noopener"
-               tabindex="-1"
-               aria-hidden="true">
+            <div class="project-gallery tint-lime">
 
-                <img
-                    src="assets/kabodhi.jpg"
-                    alt=""
-                    width="1200"
-                    height="750"
-                    loading="lazy"
-                    decoding="async"
-                >
+                <figure class="gallery-main media-frame">
+                    <img
+                        src="assets/kabodhi-main.jpg"
+                        alt="Home de Kabodhi con el producto Cordyceps ilustrado"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption class="media-hint" aria-hidden="true">
+                        CAPTURA GENERAL
+                        <code>assets/kabodhi-main.jpg</code>
+                    </figcaption>
+                </figure>
 
-                <span class="media-hint">
-                    CAPTURA DEL PROYECTO
-                    <code>assets/kabodhi.jpg</code>
-                </span>
+                <div class="gallery-thumbnails">
 
-                <span class="project-arrow">→</span>
+                    <figure class="gallery-thumbnail media-frame">
+                        <img
+                            src="assets/kabodhi-1.jpg"
+                            alt="Tienda de Kabodhi con filtros y productos"
+                            width="800"
+                            height="600"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <figcaption class="media-hint" aria-hidden="true">
+                            <code>kabodhi-1.jpg</code>
+                        </figcaption>
+                    </figure>
 
-            </a>
+                    <figure class="gallery-thumbnail media-frame">
+                        <img
+                            src="assets/kabodhi-2.jpg"
+                            alt="Sección de beneficios de la melena de león"
+                            width="800"
+                            height="600"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <figcaption class="media-hint" aria-hidden="true">
+                            <code>kabodhi-2.jpg</code>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-thumbnail media-frame">
+                        <img
+                            src="assets/kabodhi-3.jpg"
+                            alt="Panel de administración de Kabodhi editando un producto"
+                            width="800"
+                            height="600"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <figcaption class="media-hint" aria-hidden="true">
+                            <code>kabodhi-3.jpg</code>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+            </div>
 
         </article>
 
@@ -488,114 +543,116 @@
 
             <div class="project-info">
 
+                <p class="project-index">
+                    <span>03</span>
+                    <span aria-hidden="true">/</span>
+                    <span>SELECTED PROJECT</span>
+                </p>
+
                 <span class="project-category">DEMO · E-COMMERCE</span>
 
                 <h3>Griflor</h3>
 
-                <p>
+                <span class="project-symbol" aria-hidden="true">✳</span>
+
+                <p class="project-description">
                     Demo de tienda online diseñada para presentarle
                     una propuesta a Griflor Deco, importadora de
                     plantas y flores artificiales premium.
                 </p>
 
-                <p>
+                <p class="project-description">
                     Armé la identidad visual y el recorrido completo
                     de compra: home con la colección de temporada,
                     catálogo con destacados, ficha de producto,
-                    carrito y sección institucional. La idea era que
-                    el cliente pudiera navegar la experiencia real
-                    antes de decidir el desarrollo.
+                    carrito y sección institucional, para que el
+                    cliente navegara la experiencia real antes de
+                    decidir el desarrollo.
                 </p>
 
-                <ul class="tags">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JS</li>
-                    <li>UX/UI</li>
-                    <li>PROTOTIPO</li>
-                </ul>
+                <div class="project-bottom">
 
-                <a class="project-link" href="griflor/index.html">
-                    Ver demo
-                    <span class="arrow" aria-hidden="true">→</span>
-                </a>
+                    <ul class="tags">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JS</li>
+                        <li>UX/UI</li>
+                        <li>PROTOTIPO</li>
+                    </ul>
+
+                    <a class="project-link" href="griflor/index.html">
+                        Ver demo
+                        <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+
+                </div>
 
             </div>
 
-            <!--
-                Galería: una captura general arriba
-                y tres chiquitas abajo (todas en /assets).
-            -->
+            <div class="project-gallery tint-pink">
 
-            <a class="project-media project-gallery tint-pink"
-               href="griflor/index.html"
-               tabindex="-1"
-               aria-hidden="true">
-
-                <span class="shot shot-main media-frame">
+                <figure class="gallery-main media-frame">
                     <img
                         src="assets/griflor-main.jpg"
-                        alt=""
+                        alt="Home de la demo de Griflor con la colección 2026"
                         width="1600"
                         height="900"
                         loading="lazy"
                         decoding="async"
                     >
-                    <span class="media-hint">
+                    <figcaption class="media-hint" aria-hidden="true">
                         CAPTURA GENERAL
                         <code>assets/griflor-main.jpg</code>
-                    </span>
-                </span>
+                    </figcaption>
+                </figure>
 
-                <span class="shot-row">
+                <div class="gallery-thumbnails">
 
-                    <span class="shot media-frame">
+                    <figure class="gallery-thumbnail media-frame">
                         <img
                             src="assets/griflor-1.jpg"
-                            alt=""
+                            alt="Catálogo de productos de la demo de Griflor"
                             width="800"
                             height="600"
                             loading="lazy"
                             decoding="async"
                         >
-                        <span class="media-hint">
+                        <figcaption class="media-hint" aria-hidden="true">
                             <code>griflor-1.jpg</code>
-                        </span>
-                    </span>
+                        </figcaption>
+                    </figure>
 
-                    <span class="shot media-frame">
+                    <figure class="gallery-thumbnail media-frame">
                         <img
                             src="assets/griflor-2.jpg"
-                            alt=""
+                            alt="Sección de productos más vendidos de Griflor"
                             width="800"
                             height="600"
                             loading="lazy"
                             decoding="async"
                         >
-                        <span class="media-hint">
+                        <figcaption class="media-hint" aria-hidden="true">
                             <code>griflor-2.jpg</code>
-                        </span>
-                    </span>
+                        </figcaption>
+                    </figure>
 
-                    <span class="shot media-frame">
+                    <figure class="gallery-thumbnail media-frame">
                         <img
                             src="assets/griflor-3.jpg"
-                            alt=""
+                            alt="Sección institucional de Griflor con sus números"
                             width="800"
                             height="600"
                             loading="lazy"
                             decoding="async"
                         >
-                        <span class="media-hint">
+                        <figcaption class="media-hint" aria-hidden="true">
                             <code>griflor-3.jpg</code>
-                        </span>
-                    </span>
+                        </figcaption>
+                    </figure>
 
-                </span>
+                </div>
 
-                <span class="project-arrow">→</span>
-
-            </a>
+            </div>
 
         </article>
 
