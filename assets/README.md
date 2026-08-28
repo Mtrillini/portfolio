@@ -6,7 +6,7 @@ el sitio muestra el contenedor reservado con la ruta esperada
 
 | Archivo | Dónde se usa | Proporción sugerida | Medida recomendada |
 | --- | --- | --- | --- |
-| `hero-visual.jpg` | Composición del hero | ~6:5 | 1400 × 1169 px |
+| `hero-visual.jpg` | Composición del hero | ~6:5 | 1600 × 1335 px |
 | `nuve-main.jpg` | NÜVE · captura general (home) | 16:9 | 1600 × 900 px |
 | `nuve-1.jpg` | NÜVE · catálogo | 4:3 | 800 × 600 px |
 | `nuve-2.jpg` | NÜVE · panel admin (productos) | 4:3 | 800 × 600 px |
