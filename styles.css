@@ -354,6 +354,7 @@ section[id] {
 
 .media-frame {
     position: relative;
+    display: block;
     overflow: hidden;
     background: var(--media-bg);
     border: 1px solid var(--border);
@@ -1048,6 +1049,52 @@ section[id] {
 
 .project-card:hover .project-media img {
     transform: scale(1.045);
+}
+
+
+/* --- Galería: una captura general + tres chiquitas --- */
+
+.project-media.project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+    overflow: hidden;
+}
+
+.project-gallery .shot {
+    border-radius: 6px;
+}
+
+.project-gallery .shot-main {
+    flex: 1 1 auto;
+    min-height: 180px;
+}
+
+.project-gallery .shot-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.project-gallery .shot-row .shot {
+    aspect-ratio: 4 / 3;
+}
+
+.project-gallery .shot-row .media-hint {
+    padding: 8px;
+    font-size: 9px;
+    letter-spacing: .08em;
+}
+
+.project-gallery .media-hint code {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* La captura general es la que hace el zoom en hover */
+.project-card:hover .project-gallery .shot-row img {
+    transform: none;
 }
 
 .project-arrow {

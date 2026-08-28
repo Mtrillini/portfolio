@@ -9,7 +9,10 @@ el sitio muestra el contenedor reservado con la ruta esperada
 | `hero-visual.jpg` | Contenedor visual del hero | ~4:4.4 (vertical) | 900 × 990 px |
 | `nuve.jpg` | Captura de NÜVE (nuvearg.com) | 16:10 | 1200 × 750 px |
 | `kabodhi.jpg` | Captura de Kabodhi (kabodhi.online) | 16:10 | 1200 × 750 px |
-| `griflor.jpg` | Captura del proyecto Griflor | 16:10 | 1200 × 750 px |
+| `griflor-main.jpg` | Griflor · captura general (arriba) | 16:9 | 1600 × 900 px |
+| `griflor-1.jpg` | Griflor · captura chica 1 | 4:3 | 800 × 600 px |
+| `griflor-2.jpg` | Griflor · captura chica 2 | 4:3 | 800 × 600 px |
+| `griflor-3.jpg` | Griflor · captura chica 3 | 4:3 | 800 × 600 px |
 | `og-cover.jpg` | Vista previa al compartir el link | 1.91:1 | 1200 × 630 px |
 
 ## Notas
