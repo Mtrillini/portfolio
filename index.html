@@ -1,526 +1,652 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Martina Trillini — Full Stack Developer & UX/UI Designer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Martina Trillini | Full Stack Developer & UX/UI Designer</title>
+
+    <meta name="description" content="Portfolio de Martina Trillini, Full Stack Developer y UX/UI Designer. Diseño de experiencias digitales y desarrollo de sistemas a medida: del wireframe al deploy.">
+    <meta name="author" content="Martina Trillini">
+    <meta name="theme-color" content="#f5f1e9">
+
+    <!-- Open Graph (vista previa al compartir el link) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Martina Trillini | Full Stack Developer & UX/UI Designer">
+    <meta property="og:description" content="Diseño experiencias digitales y desarrollo el sistema. Del wireframe al deploy, sin intermediarios.">
+    <meta property="og:image" content="assets/og-cover.jpg">
+    <meta property="og:locale" content="es_AR">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23101010'/><text x='50' y='72' font-family='Inter,sans-serif' font-size='62' font-weight='900' fill='%23d9f63a' text-anchor='middle'>M</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!--
+        Aplica el tema guardado antes de pintar la página
+        para evitar el parpadeo al cargar.
+        Por defecto arranca en claro (identidad crema).
+        Para respetar la preferencia del sistema, cambiar
+        'light' por: (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            try {
+                root.setAttribute('data-theme', localStorage.getItem('mt-theme') || 'light');
+            } catch (e) {
+                root.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
 </head>
+
 <body>
 
-  <nav id="navbar">
-    <div class="nav-container">
-      <span class="nav-logo">
-        <span class="logo-code"></span> MT <span class="logo-design"></span>
-      </span>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
-          </svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
-          </svg>
-        </button>
-        <button class="nav-toggle" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- AMBIENT -->
-  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
-  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
 
-  <!-- HERO -->
-  <section id="inicio">
-    <div class="hero">
+<!-- =========================
+     HEADER
+========================= -->
 
-      <!-- LEFT: texto -->
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          disponible para proyectos
+<header class="header" id="header">
+
+    <div class="header-inner shell">
+
+        <a href="#inicio" class="logo">
+            MT<span class="logo-star" aria-hidden="true">✳</span>
+            <span class="visually-hidden">Inicio</span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+                <span class="theme-icon" aria-hidden="true">☼</span>
+                <span class="theme-dot" aria-hidden="true"></span>
+                <span class="visually-hidden">Cambiar entre modo claro y oscuro</span>
+            </button>
+
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="visually-hidden">Abrir menú de navegación</span>
+            </button>
+
         </div>
 
-        <h1 class="hero-name">
-          Martina<br><em>Trillini</em>
+    </div>
+
+</header>
+
+
+<main id="contenido">
+
+<!-- =========================
+     01 · HERO
+========================= -->
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+
+    <div class="hero-content">
+
+        <span class="section-number" aria-hidden="true">01</span>
+
+        <span class="label">PORTFOLIO</span>
+
+        <h1 id="hero-title">
+            MARTINA
+            <strong>TRILLINI</strong>
         </h1>
 
-        <h2 class="hero-role">
-          <span class="role-prefix">→</span>
-          <span id="typed-role">Full Stack Dev</span><span class="typed-cursor">_</span>
-        </h2>
-
-        <p class="hero-desc">
-          Diseño la experiencia y desarrollo el sistema. Del wireframe al deploy,
-          sin intermediarios — PHP, MySQL, REST APIs y Figma en el mismo flujo de trabajo.
+        <p class="hero-role">
+            FULL STACK DEVELOPER
+            <br>
+            &amp; <mark>UX/UI DESIGNER</mark>
         </p>
 
-        <div class="hero-caps">
-          <div class="hero-cap cap-code">
-            <div class="cap-header">
-              <span class="cap-icon code">{ }</span>
-              <span class="cap-title">Dev</span>
-            </div>
-            <ul class="cap-list">
-              <li>PHP · MySQL · REST APIs</li>
-              <li>JavaScript · HTML · CSS</li>
-              <li>Sistemas de gestión</li>
-              <li>Lógica de negocio</li>
-            </ul>
-          </div>
-          <div class="hero-cap cap-design">
-            <div class="cap-header">
-              <span class="cap-icon design">◈</span>
-              <span class="cap-title">UX / UI</span>
-            </div>
-            <ul class="cap-list">
-              <li>Figma · wireframes</li>
-              <li>User research</li>
-              <li>Arquitectura de info</li>
-              <li>Pruebas de usabilidad</li>
-            </ul>
-          </div>
-        </div>
+        <p class="hero-text">
+            Diseño experiencias digitales y desarrollo el sistema.
+            Del wireframe al deploy, sin intermediarios.
+        </p>
 
         <div class="hero-buttons">
-          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-          <a href="#contacto" class="btn btn-outline">Contacto</a>
-        </div>
 
-        <div class="hero-location">
-          <span class="location-dot"></span>
-          San Miguel, Buenos Aires
-        </div>
-      </div>
-
-      <!-- RIGHT: código panel -->
-      <div class="hero-right">
-        <div class="hero-panel">
-          <div class="panel-tabs">
-            <div class="panel-tab active-code">developer.php</div>
-            <div class="panel-tab" style="color:var(--text-dim)">design.fig</div>
-            <div class="panel-dots">
-              <span class="dot dot-r"></span>
-              <span class="dot dot-y"></span>
-              <span class="dot dot-g"></span>
-            </div>
-          </div>
-          <div class="panel-code">
-<pre><span class="s-tag">&lt;?php</span>
-
-<span class="s-comment">// Martina Trillini — Full Stack Dev</span>
-<span class="s-kw">class</span> <span class="s-fn">Developer</span> {
-
-  <span class="s-kw">private</span> <span class="s-var">$stack</span> = [
-    <span class="s-key">"backend"</span>  => [<span class="s-str">"PHP"</span>, <span class="s-str">"MySQL"</span>, <span class="s-str">"REST API"</span>],
-    <span class="s-key">"frontend"</span> => [<span class="s-str">"JS"</span>, <span class="s-str">"HTML"</span>, <span class="s-str">"CSS"</span>],
-    <span class="s-key">"design"</span>   => [<span class="s-str">"Figma"</span>, <span class="s-str">"UX/UI"</span>],
-  ];
-
-  <span class="s-kw">public function</span> <span class="s-fn">build</span>(<span class="s-var">$idea</span>) {
-    <span class="s-var">$ux</span>  = <span class="s-var">$this</span>-><span class="s-fn">design</span>(<span class="s-var">$idea</span>);
-    <span class="s-var">$api</span> = <span class="s-var">$this</span>-><span class="s-fn">develop</span>(<span class="s-var">$ux</span>);
-    <span class="s-kw">return</span> <span class="s-var">$this</span>-><span class="s-fn">deploy</span>(<span class="s-var">$api</span>);
-  }
-
-}
-
-<span class="s-var">$mt</span> = <span class="s-kw">new</span> <span class="s-fn">Developer</span>();
-<span class="s-var">$mt</span>-><span class="s-fn">build</span>(<span class="s-str">"tu próximo proyecto"</span>);
-<span class="s-comment">// ✓ listo para producción</span></pre>
-          </div>
-
-          <!-- Design panel (visible on tab click, hidden by default via JS) -->
-          <div class="panel-design" id="designPanel" style="display:none">
-            <div class="design-frame">
-              <div class="design-topbar">
-                <span class="design-topbar-label">Figma — martina.fig</span>
-              </div>
-              <div class="design-canvas">
-                <div class="dc-title-bar"></div>
-                <div class="dc-sub-bar"></div>
-                <div class="dc-btns">
-                  <div class="dc-btn-fill"></div>
-                  <div class="dc-btn-out"></div>
-                </div>
-                <div class="dc-cards">
-                  <div class="dc-card"></div>
-                  <div class="dc-card"></div>
-                </div>
-              </div>
-            </div>
-            <div class="design-swatches">
-              <span class="swatch" style="background:var(--c-design)"></span>
-              <span class="swatch" style="background:var(--c-code)"></span>
-              <span class="swatch" style="background:var(--accent)"></span>
-              <span class="swatch" style="background:var(--surface2)"></span>
-              <span class="swatch-label">Color system</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-strip">
-    <div class="stats-inner">
-      <div class="stat-item" data-reveal data-reveal-delay="0">
-        <span class="stat-num code">2+</span>
-        <span class="stat-label">Años en producción</span>
-      </div>
-      <div class="stat-item" data-reveal data-reveal-delay="1">
-        <span class="stat-num code">PHP</span>
-        <span class="stat-label">Backend principal</span>
-      </div>
-      <div class="stat-item" data-reveal data-reveal-delay="2">
-        <span class="stat-num design">UX/UI</span>
-        <span class="stat-label">Research & Design</span>
-      </div>
-      <div class="stat-item" data-reveal data-reveal-delay="3">
-        <span class="stat-num">Scrum</span>
-        <span class="stat-label">Metodología ágil</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi" class="section section-alt">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <span class="section-eyebrow">01</span>
-        <h2 class="section-title">Sobre mí</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="sobre-grid">
-        <div class="sobre-block" data-reveal data-reveal-delay="0">
-          <h3 class="sobre-subtitle"><span class="sobre-icon">✦</span> Mi enfoque</h3>
-          <ul class="enfoque-list">
-            <li>
-              <span class="enfoque-dot"></span>
-              <div><strong>UX/UI basado en evidencia</strong>
-              <p>Investigo antes de diseñar. Entrevistas, user journeys y pruebas de usabilidad guían cada decisión.</p></div>
-            </li>
-            <li>
-              <span class="enfoque-dot"></span>
-              <div><strong>Diseño que se puede construir</strong>
-              <p>Mi perfil técnico me permite definir criterios precisos y colaborar con desarrollo sin fricciones.</p></div>
-            </li>
-            <li>
-              <span class="enfoque-dot"></span>
-              <div><strong>Backend estructurado</strong>
-              <p>Arquitectura modular, bases de datos normalizadas y consultas que escalan.</p></div>
-            </li>
-            <li>
-              <span class="enfoque-dot"></span>
-              <div><strong>Resolución de problemas reales</strong>
-              <p>Foco en el proceso de negocio y en el usuario, no solo en que funcione.</p></div>
-            </li>
-          </ul>
-        </div>
-        <div class="sobre-block" data-reveal data-reveal-delay="1">
-          <h3 class="sobre-subtitle"><span class="sobre-icon">⚙</span> Cómo trabajo</h3>
-          <ol class="proceso-list">
-            <li><span class="paso-num">01</span>
-              <div><strong>Investigo el problema</strong>
-              <p>Entrevistas, relevamiento de necesidades y análisis de comportamiento.</p></div>
-            </li>
-            <li><span class="paso-num">02</span>
-              <div><strong>Diseño el flujo</strong>
-              <p>User journeys, wireframes y prototipos en Figma con arquitectura clara.</p></div>
-            </li>
-            <li><span class="paso-num">03</span>
-              <div><strong>Modelo la base de datos</strong>
-              <p>Tablas, relaciones y estados bien definidos antes de escribir código.</p></div>
-            </li>
-            <li><span class="paso-num">04</span>
-              <div><strong>Desarrollo la lógica</strong>
-              <p>PHP estructurado, módulos independientes, REST APIs documentadas.</p></div>
-            </li>
-            <li><span class="paso-num">05</span>
-              <div><strong>Pruebo y optimizo</strong>
-              <p>Pruebas de usabilidad, optimización SQL y refactoring cuando es necesario.</p></div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section id="stack" class="section">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <span class="section-eyebrow">02</span>
-        <h2 class="section-title">Stack</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="stack-grid">
-        <div class="stack-card" data-reveal data-reveal-delay="0">
-          <div class="stack-card-header">
-            <span class="stack-icon design">◈</span>
-            <h3>UX/UI & Diseño</h3>
-            <span class="stack-badge">Principal</span>
-          </div>
-          <ul class="stack-tags">
-            <li class="tag tag-design">Figma</li>
-            <li class="tag tag-strong">Wireframing</li>
-            <li class="tag tag-strong">Prototipado</li>
-            <li class="tag">User Journeys</li>
-            <li class="tag">Mapas de empatía</li>
-            <li class="tag">Arquetipos</li>
-            <li class="tag">Arquitectura de info</li>
-            <li class="tag">Pruebas de usabilidad</li>
-            <li class="tag">Heurísticas de Nielsen</li>
-          </ul>
-        </div>
-        <div class="stack-card" data-reveal data-reveal-delay="1">
-          <div class="stack-card-header">
-            <span class="stack-icon code">{ }</span>
-            <h3>Backend</h3>
-            <span class="stack-badge">Principal</span>
-          </div>
-          <ul class="stack-tags">
-            <li class="tag tag-code">PHP</li>
-            <li class="tag tag-code">MySQL</li>
-            <li class="tag tag-code">REST APIs</li>
-            <li class="tag tag-strong">JOINs complejos</li>
-            <li class="tag">Diseño de BD</li>
-            <li class="tag">Lógica de negocio</li>
-            <li class="tag">Validaciones</li>
-            <li class="tag">Control de estados</li>
-          </ul>
-        </div>
-        <div class="stack-card" data-reveal data-reveal-delay="2">
-          <div class="stack-card-header">
-            <span class="stack-icon" style="color:var(--accent)">&lt;/&gt;</span>
-            <h3>Frontend</h3>
-          </div>
-          <ul class="stack-tags">
-            <li class="tag tag-strong">HTML semántico</li>
-            <li class="tag tag-strong">CSS</li>
-            <li class="tag tag-strong">JavaScript</li>
-            <li class="tag">AJAX / Fetch</li>
-            <li class="tag">Responsive design</li>
-            <li class="tag">Animaciones CSS</li>
-          </ul>
-        </div>
-        <div class="stack-card" data-reveal data-reveal-delay="3">
-          <div class="stack-card-header">
-            <span class="stack-icon" style="color:var(--text-muted)">⚙</span>
-            <h3>Gestión & Tools</h3>
-          </div>
-          <ul class="stack-tags">
-            <li class="tag tag-strong">Jira</li>
-            <li class="tag tag-strong">Scrum</li>
-            <li class="tag">Git & GitHub</li>
-            <li class="tag tag-wip">.NET Core</li>
-            <li class="tag tag-wip">Arquitectura de software</li>
-          </ul>
-          <p class="stack-wip-note">// en desarrollo constante</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="section section-alt">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <span class="section-eyebrow">03</span>
-        <h2 class="section-title">Proyectos</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="proyectos-grid">
-
-        <article class="proyecto-card type-backend" data-reveal data-reveal-delay="0">
-          <div class="proyecto-header">
-            <div class="proyecto-num">// 01</div>
-            <div class="proyecto-tipo">Sistema veterinario</div>
-          </div>
-          <h3 class="proyecto-nombre">EvePet</h3>
-          <p class="proyecto-desc">
-            Plataforma veterinaria de gestión integral. Registro de mascotas y dueños,
-            turnos con clínicas y petshops, historial médico, vacunas y recordatorios.
-            Módulo de consultas de urgencia con generación de PDF.
-          </p>
-          <div class="proyecto-features">
-            <span class="feature">Turnos online</span>
-            <span class="feature">Historial médico</span>
-            <span class="feature">Vacunas</span>
-            <span class="feature">PDF</span>
-            <span class="feature">Multi-rol</span>
-          </div>
-          <div class="proyecto-tags">
-            <span class="tag tag-code">PHP</span>
-            <span class="tag tag-code">MySQL</span>
-            <span class="tag">AJAX</span>
-            <span class="tag">Auth</span>
-          </div>
-          <div class="proyecto-footer">
-            <a href="http://localhost/evet" target="_blank" rel="noopener" class="btn-proyecto">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 17L17 7M17 7H7M17 7v10"/>
-              </svg>
+            <a href="#proyectos" class="btn btn-primary">
+                Ver proyectos
+                <span class="arrow" aria-hidden="true">→</span>
             </a>
-          </div>
+
+            <a href="#contacto" class="btn btn-secondary">
+                Contacto
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+        <span class="location">
+            <span class="status-dot" aria-hidden="true"></span>
+            San Miguel, Buenos Aires
+        </span>
+
+    </div>
+
+
+    <!--
+        ============================================
+        CONTENEDOR VISUAL RESERVADO DEL HERO
+        Espacio para la composición gráfica propia.
+        Archivo esperado: assets/hero-visual.jpg
+        NO usar fotografía personal.
+        ============================================
+    -->
+
+    <figure class="hero-visual media-frame" data-reveal>
+
+        <img
+            src="assets/hero-visual.jpg"
+            alt="Composición visual sobre desarrollo y diseño"
+            width="900"
+            height="990"
+            fetchpriority="high"
+            decoding="async"
+        >
+
+        <figcaption class="media-hint" aria-hidden="true">
+            COMPOSICIÓN VISUAL
+            <code>assets/hero-visual.jpg</code>
+        </figcaption>
+
+        <span class="hero-star" aria-hidden="true">✳</span>
+
+        <div class="hero-message" aria-hidden="true">
+            <span>CÓDIGO QUE</span>
+            <strong>DISEÑA SOLUCIONES</strong>
+        </div>
+
+        <div class="pixels" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </figure>
+
+</section>
+
+
+<!-- =========================
+     FRANJA RESUMEN
+========================= -->
+
+<section class="summary" aria-label="Resumen de perfil" data-reveal>
+
+    <article class="summary-item">
+        <strong class="big-number">2+</strong>
+        <span>AÑOS DE<br>EXPERIENCIA</span>
+    </article>
+
+    <article class="summary-item">
+        <span class="summary-icon pink" aria-hidden="true">&lt;/&gt;</span>
+        <div>
+            <strong>DEVELOPER</strong>
+            <p>PHP · MySQL<br>JavaScript · React</p>
+        </div>
+    </article>
+
+    <article class="summary-item">
+        <span class="summary-icon lime" aria-hidden="true">✎</span>
+        <div>
+            <strong>UX/UI DESIGN</strong>
+            <p>Figma · Wireframes<br>User Research</p>
+        </div>
+    </article>
+
+    <article class="summary-item">
+        <span class="summary-icon pink" aria-hidden="true">▣</span>
+        <div>
+            <strong>DESIGN</strong>
+            <p>Photoshop<br>Illustrator</p>
+        </div>
+    </article>
+
+    <article class="summary-item">
+        <span class="summary-icon lime" aria-hidden="true">◉</span>
+        <div>
+            <strong>HERRAMIENTAS</strong>
+            <p>Git · GitHub<br>VS Code · Postman</p>
+        </div>
+    </article>
+
+</section>
+
+
+<!-- =========================
+     02 · SOBRE MÍ
+========================= -->
+
+<section class="section" id="sobre-mi" aria-labelledby="sobre-mi-title">
+
+    <div class="section-title">
+        <span class="section-index" aria-hidden="true">02</span>
+        <h2 id="sobre-mi-title">SOBRE MÍ</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-text" data-reveal>
+
+            <p>
+                Combino pensamiento lógico y sensibilidad visual.
+                Me enfoco en entender el problema, diseñar la solución
+                y construir productos digitales funcionales,
+                usables y escalables.
+            </p>
+
+            <p>
+                Mi perfil combina desarrollo Full Stack con UX/UI:
+                puedo analizar una necesidad, pensar el flujo,
+                diseñar la interfaz y llevarla a una implementación real.
+            </p>
+
+        </div>
+
+        <div class="concept-card" data-reveal>
+
+            <span class="concept-star" aria-hidden="true">✳</span>
+
+            <ul>
+                <li><strong>DISEÑO CON PROPÓSITO</strong></li>
+                <li><strong>CÓDIGO QUE FUNCIONA</strong></li>
+            </ul>
+
+            <span class="concept-arrow" aria-hidden="true">➜</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     03 · PROYECTOS
+
+     Cada tarjeta reserva una zona amplia para la captura
+     real del sistema. Las imágenes van en /assets.
+
+     Para sumar un proyecto:
+     1. Guardá la captura en assets/ con el nombre indicado
+        en el <code> del .media-hint.
+     2. Duplicá una tarjeta y cambiá título, texto, tags y URL.
+     3. Si todavía no tiene demo en vivo, reemplazá el <a
+        class="project-link"> por un <span class="project-link is-pending">.
+========================= -->
+
+<section class="section projects" id="proyectos" aria-labelledby="proyectos-title">
+
+    <div class="section-title">
+        <span class="section-index" aria-hidden="true">03</span>
+        <h2 id="proyectos-title">PROYECTOS</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="projects-list">
+
+
+        <!-- PROYECTO 01 · NÜVE -->
+
+        <article class="project-card" data-reveal>
+
+            <div class="project-info">
+
+                <span class="project-category">E-COMMERCE · PERFUMERÍA</span>
+
+                <h3>NÜVE</h3>
+
+                <p>
+                    Perfumería de autor con catálogo curado,
+                    carrito propio, filtros por familia olfativa
+                    y panel de administración de productos.
+                </p>
+
+                <ul class="tags">
+                    <li>JAVASCRIPT</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>UX/UI</li>
+                </ul>
+
+                <a class="project-link" href="https://nuvearg.com" target="_blank" rel="noopener">
+                    Ver sitio
+                    <span class="arrow" aria-hidden="true">→</span>
+                    <span class="visually-hidden">NÜVE (se abre en una pestaña nueva)</span>
+                </a>
+
+            </div>
+
+            <a class="project-media media-frame tint-pink"
+               href="https://nuvearg.com"
+               target="_blank"
+               rel="noopener"
+               tabindex="-1"
+               aria-hidden="true">
+
+                <img
+                    src="assets/nuve.jpg"
+                    alt=""
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <span class="media-hint">
+                    CAPTURA DEL PROYECTO
+                    <code>assets/nuve.jpg</code>
+                </span>
+
+                <span class="project-arrow">→</span>
+
+            </a>
+
         </article>
 
-        <article class="proyecto-card type-sistema" data-reveal data-reveal-delay="1">
-          <div class="proyecto-header">
-            <div class="proyecto-num">// 02</div>
-            <div class="proyecto-tipo">Sistema médico</div>
-          </div>
-          <h3 class="proyecto-nombre">Centro Médico</h3>
-          <p class="proyecto-desc">
-            Sistema de gestión para centro de salud. Agenda de turnos con disponibilidad
-            por profesional, gestión de pacientes y obras sociales. API interna para
-            operaciones de la agenda y panel administrativo.
-          </p>
-          <div class="proyecto-features">
-            <span class="feature">Agenda de turnos</span>
-            <span class="feature">Obras sociales</span>
-            <span class="feature">API interna</span>
-            <span class="feature">Panel admin</span>
-            <span class="feature">Auth por roles</span>
-          </div>
-          <div class="proyecto-tags">
-            <span class="tag tag-code">PHP</span>
-            <span class="tag tag-code">MySQL</span>
-            <span class="tag tag-code">REST API</span>
-            <span class="tag">Auth</span>
-          </div>
-          <div class="proyecto-footer">
-            <a href="https://martinatrillini.online/centro/admin/panel.php" target="_blank" class="btn-proyecto">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 17L17 7M17 7H7M17 7v10"/>
-              </svg>
+
+        <!-- PROYECTO 02 · KABODHI -->
+
+        <article class="project-card" data-reveal>
+
+            <div class="project-info">
+
+                <span class="project-category">E-COMMERCE · WELLNESS</span>
+
+                <h3>Kabodhi</h3>
+
+                <p>
+                    Tienda de hongos adaptógenos y suplementos
+                    naturales. Catálogo dinámico, carrito, carrusel
+                    de campañas y panel de gestión propio.
+                </p>
+
+                <ul class="tags">
+                    <li>JAVASCRIPT</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>NETLIFY</li>
+                </ul>
+
+                <a class="project-link" href="https://kabodhi.online" target="_blank" rel="noopener">
+                    Ver sitio
+                    <span class="arrow" aria-hidden="true">→</span>
+                    <span class="visually-hidden">Kabodhi (se abre en una pestaña nueva)</span>
+                </a>
+
+            </div>
+
+            <a class="project-media media-frame tint-lime"
+               href="https://kabodhi.online"
+               target="_blank"
+               rel="noopener"
+               tabindex="-1"
+               aria-hidden="true">
+
+                <img
+                    src="assets/kabodhi.jpg"
+                    alt=""
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <span class="media-hint">
+                    CAPTURA DEL PROYECTO
+                    <code>assets/kabodhi.jpg</code>
+                </span>
+
+                <span class="project-arrow">→</span>
+
             </a>
-          </div>
+
         </article>
 
-        <article class="proyecto-card type-ecommerce" data-reveal data-reveal-delay="2">
-          <div class="proyecto-header">
-            <div class="proyecto-num">// 03</div>
-            <div class="proyecto-tipo">E-commerce</div>
-          </div>
-          <h3 class="proyecto-nombre">Griflor</h3>
-          <p class="proyecto-desc">
-            Demo de tienda online para venta de plantas artificiales premium. Catálogo
-            con galería de productos, modal de detalle con slider fluido y diseño custom
-            con identidad visual propia basada en la marca.
-          </p>
-          <div class="proyecto-features">
-            <span class="feature">Catálogo</span>
-            <span class="feature">Galería slider</span>
-            <span class="feature">Modal detalle</span>
-            <span class="feature">Responsive</span>
-          </div>
-          <div class="proyecto-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag tag-design">UX/UI</span>
-          </div>
-          <div class="proyecto-footer">
-            <a href="https://martinatrillini.online/griflor/index.html" target="_blank" class="btn-proyecto">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 17L17 7M17 7H7M17 7v10"/>
-              </svg>
+
+        <!-- PROYECTO 03 · GRIFLOR -->
+
+        <article class="project-card" data-reveal>
+
+            <div class="project-info">
+
+                <span class="project-category">E-COMMERCE</span>
+
+                <h3>Griflor</h3>
+
+                <p>
+                    Tienda online con catálogo de productos,
+                    filtros, galería y diseño responsive
+                    pensado desde la experiencia de compra.
+                </p>
+
+                <ul class="tags">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                    <li>UX/UI</li>
+                </ul>
+
+                <a class="project-link" href="griflor/index.html">
+                    Ver proyecto
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+            <a class="project-media media-frame tint-pink"
+               href="griflor/index.html"
+               tabindex="-1"
+               aria-hidden="true">
+
+                <img
+                    src="assets/griflor.jpg"
+                    alt=""
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <span class="media-hint">
+                    CAPTURA DEL PROYECTO
+                    <code>assets/griflor.jpg</code>
+                </span>
+
+                <span class="project-arrow">→</span>
+
             </a>
-          </div>
+
         </article>
 
-      </div>
     </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="section">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <span class="section-eyebrow">04</span>
-        <h2 class="section-title">Contacto</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="contacto-wrapper">
-        <p class="contacto-intro" data-reveal>
-          Si tenés un proyecto, una propuesta o simplemente querés hablar de diseño o código,
-          estoy disponible.
-        </p>
-        <div class="contacto-links">
-          <a href="mailto:martrillini@gmail.com" class="contacto-item" data-reveal data-reveal-delay="0">
-            <span class="contacto-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </span>
-            <div class="contacto-info">
-              <span class="contacto-label">Email</span>
-              <span class="contacto-value">martrillini@gmail.com</span>
-            </div>
-            <span class="contacto-arrow">↗</span>
-          </a>
-          <a href="https://linkedin.com/in/martina-trillini-5289a0161" target="_blank" rel="noopener" class="contacto-item" data-reveal data-reveal-delay="1">
-            <span class="contacto-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </span>
-            <div class="contacto-info">
-              <span class="contacto-label">LinkedIn</span>
-              <span class="contacto-value">martina-trillini</span>
-            </div>
-            <span class="contacto-arrow">↗</span>
-          </a>
-          <a href="https://wa.me/541139225427" target="_blank" rel="noopener" class="contacto-item" data-reveal data-reveal-delay="2">
-            <span class="contacto-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            </span>
-            <div class="contacto-info">
-              <span class="contacto-label">WhatsApp</span>
-              <span class="contacto-value">+54 11 3922-5427</span>
-            </div>
-            <span class="contacto-arrow">↗</span>
-          </a>
-          <a href="https://github.com" target="_blank" rel="noopener" class="contacto-item contacto-item-wip" data-reveal data-reveal-delay="3">
-            <span class="contacto-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            </span>
-            <div class="contacto-info">
-              <span class="contacto-label">GitHub</span>
-              <span class="contacto-value contacto-soon">Próximamente</span>
-            </div>
-            <span class="contacto-arrow">↗</span>
-          </a>
+</section>
+
+
+<!-- =========================
+     04 · STACK
+========================= -->
+
+<section class="section" id="stack" aria-labelledby="stack-title">
+
+    <div class="section-title">
+        <span class="section-index" aria-hidden="true">04</span>
+        <h2 id="stack-title">STACK</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="stack-grid">
+
+        <article class="stack-card" data-reveal>
+            <h3>
+                <span class="dot pink-bg" aria-hidden="true"></span>
+                FRONTEND
+            </h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </article>
+
+        <article class="stack-card" data-reveal>
+            <h3>
+                <span class="dot lime-bg" aria-hidden="true"></span>
+                BACKEND
+            </h3>
+            <ul>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>REST API</li>
+            </ul>
+        </article>
+
+        <article class="stack-card" data-reveal>
+            <h3>
+                <span class="dot pink-bg" aria-hidden="true"></span>
+                UI / UX
+            </h3>
+            <ul>
+                <li>Figma</li>
+                <li>Wireframes</li>
+                <li>Prototipos</li>
+                <li>User Research</li>
+            </ul>
+        </article>
+
+        <article class="stack-card" data-reveal>
+            <h3>
+                <span class="dot lime-bg" aria-hidden="true"></span>
+                TOOLS
+            </h3>
+            <ul>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>VS Code</li>
+                <li>Postman</li>
+            </ul>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     05 · CONTACTO
+========================= -->
+
+<section class="section contact" id="contacto" aria-labelledby="contacto-title">
+
+    <div class="section-title">
+        <span class="section-index" aria-hidden="true">05</span>
+        <h2 id="contacto-title">HABLEMOS</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-intro" data-reveal>
+
+            <p>
+                ¿Tenés un proyecto, una idea o una propuesta?
+                Estoy disponible para nuevos desafíos.
+            </p>
+
+            <a href="mailto:martrillini@gmail.com" class="btn btn-primary">
+                Escribime
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
         </div>
-      </div>
+
+        <div class="contact-data" data-reveal>
+
+            <a href="mailto:martrillini@gmail.com">
+                <span class="icon" aria-hidden="true">✉</span>
+                martrillini@gmail.com
+            </a>
+
+            <a href="https://linkedin.com/in/martina-trillini" target="_blank" rel="noopener">
+                <span class="icon" aria-hidden="true">in</span>
+                linkedin.com/in/martina-trillini
+            </a>
+
+            <a href="https://wa.me/541139225427" target="_blank" rel="noopener">
+                <span class="icon" aria-hidden="true">◉</span>
+                +54 11 3922 5427
+            </a>
+
+            <span>
+                <span class="icon" aria-hidden="true">⌖</span>
+                San Miguel, Buenos Aires
+            </span>
+
+        </div>
+
+        <div class="contact-symbol" aria-hidden="true">
+            <span class="symbol">✳</span>
+            <small>DISEÑO · DESARROLLO · EXPERIENCIAS</small>
+        </div>
+
     </div>
-  </section>
 
-  <footer class="footer">
-    Martina Trillini &nbsp;·&nbsp; Full Stack Developer & UX/UI Designer &nbsp;·&nbsp; San Miguel, Buenos Aires
-  </footer>
+</section>
 
-  <a href="https://wa.me/541139225427?text=Hola%20Martina,%20vi%20tu%20portfolio%20y%20quiero%20contactarte" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" fill="white"><path d="M16.001 2.667c-7.36 0-13.334 5.973-13.334 13.333 0 2.355.615 4.567 1.687 6.484l-1.795 6.516 6.683-1.752a13.272 13.272 0 0 0 6.759 1.83c7.36 0 13.333-5.973 13.333-13.334S23.36 2.667 16 2.667zm0 24c-2.086 0-4.046-.56-5.743-1.535l-.41-.243-3.965 1.04 1.057-3.847-.266-.396A10.575 10.575 0 0 1 5.334 16c0-5.88 4.786-10.667 10.667-10.667 5.88 0 10.667 4.787 10.667 10.667S21.88 26.667 16 26.667zm5.787-7.787c-.316-.158-1.868-.922-2.156-1.027-.287-.105-.497-.158-.708.158-.21.316-.813 1.027-.996 1.24-.182.21-.366.237-.682.079-.316-.158-1.334-.491-2.541-1.566-.939-.836-1.574-1.868-1.759-2.184-.184-.316-.02-.487.138-.645.142-.141.316-.366.474-.548.158-.184.21-.316.316-.527.105-.21.053-.395-.026-.553-.079-.158-.708-1.71-.97-2.34-.255-.613-.514-.53-.708-.54l-.603-.011c-.21 0-.553.079-.842.395-.287.316-1.105 1.08-1.105 2.63 0 1.55 1.132 3.046 1.29 3.256.158.21 2.226 3.4 5.394 4.765.754.325 1.34.52 1.797.666.755.24 1.442.206 1.986.125.606-.09 1.868-.763 2.132-1.5.263-.737.263-1.368.184-1.5-.079-.132-.29-.21-.606-.368z"/></svg>
-  </a>
+</main>
 
-  <script src="main.js"></script>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <span>© <span id="year">2026</span> Martina Trillini</span>
+
+    <span>Full Stack Developer &amp; UX/UI Designer</span>
+
+    <span>
+        Hecho con código y diseño
+        <span aria-hidden="true">♥</span>
+    </span>
+
+</footer>
+
+
+<script src="main.js" defer></script>
+
 </body>
+
 </html>
