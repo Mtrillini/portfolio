@@ -399,6 +399,17 @@ section[id] {
     display: none;
 }
 
+/* Con JS el cartel guía sólo aparece si falta el archivo.
+   Si no, se transparentaría por detrás de las imágenes
+   con fondo recortado (como la del hero). */
+.js .media-frame .media-hint {
+    display: none;
+}
+
+.js .media-frame.is-empty .media-hint {
+    display: grid;
+}
+
 /* Sobre los fondos rosa/lima el texto guía necesita más contraste */
 .media-frame.tint-pink .media-hint,
 .media-frame.tint-lime .media-hint {
