@@ -800,15 +800,15 @@ section[id] {
     object-fit: contain;
 }
 
-.js .summary-icon {
+.js .icon-swap {
     display: none;
 }
 
-.js .summary-icon.is-ready {
+.js .icon-swap.is-ready {
     display: block;
 }
 
-.summary-glyph {
+.summary-media .icon-fallback {
     font-size: 30px;
     line-height: 1.4;
 }
@@ -857,15 +857,15 @@ section[id] {
 }
 
 .concept-card {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: clamp(20px, 3vw, 35px);
-    min-height: 190px;
-    padding: clamp(26px, 3vw, 38px) clamp(26px, 3.2vw, 45px);
+    --flow-gap: clamp(16px, 2.4vw, 34px);
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 4vw, 46px);
+    padding: clamp(30px, 3.6vw, 46px) clamp(28px, 3.4vw, 48px);
     background: var(--lime);
     color: var(--black);
-    border-radius: var(--radius-lg);
+    border-radius: 24px;
     transition:
         transform var(--base) var(--ease),
         box-shadow var(--base) var(--ease);
@@ -876,9 +876,19 @@ section[id] {
     box-shadow: var(--shadow-lg);
 }
 
-.concept-card .concept-star {
+
+/* --- Arriba: asterisco + los dos carteles --- */
+
+.concept-top {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 38px);
+}
+
+.concept-star {
+    flex: 0 0 auto;
     color: var(--pink-ink);
-    font-size: clamp(56px, 6vw, 80px);
+    font-size: clamp(56px, 6vw, 84px);
     line-height: 1;
     transition: transform var(--slow) var(--ease);
 }
@@ -887,35 +897,75 @@ section[id] {
     transform: rotate(180deg);
 }
 
-.concept-card ul {
+.concept-claims {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
 }
 
-.concept-card strong {
+.concept-claims strong {
     display: inline-block;
-    padding: 9px 13px;
+    padding: 11px 18px;
     background: var(--black);
     color: #fff;
-    border-radius: 3px;
+    border-radius: 4px;
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: clamp(13px, 1.1vw, 15px);
     font-weight: 600;
-    letter-spacing: .02em;
+    letter-spacing: .06em;
 }
 
-.concept-card .concept-arrow {
-    font-size: clamp(42px, 5vw, 62px);
+
+/* --- Abajo: el flujo de trabajo --- */
+
+.concept-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--flow-gap);
+}
+
+.concept-step {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+    min-width: 78px;
+}
+
+/* Flecha entre pasos, alineada con la fila de iconos */
+.concept-step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 8px;
+    left: calc(100% + var(--flow-gap) / 2);
+    transform: translateX(-50%);
+    color: var(--pink-ink);
+    font-size: 26px;
     line-height: 1;
-    transition: transform var(--base) var(--ease);
 }
 
-.concept-card:hover .concept-arrow {
-    transform: translateX(8px);
+.concept-icon {
+    display: grid;
+    place-items: center;
+    min-height: 46px;
+    color: var(--pink-ink);
+    font-size: 26px;
 }
 
+.concept-icon .step-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.concept-name {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .12em;
+}
 
 /* =========================================================
    08 · PROYECTOS
@@ -1532,13 +1582,19 @@ section[id] {
         height: 260px;
     }
 
-    .concept-card {
-        grid-template-columns: auto 1fr;
-        row-gap: 20px;
+    /* En mobile el flujo pasa a dos columnas y sin flechas */
+    .concept-flow {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 16px;
     }
 
-    .concept-card .concept-arrow {
+    .concept-step:not(:last-child)::after {
         display: none;
+    }
+
+    .concept-top {
+        gap: 18px;
     }
 
     .stack-grid,

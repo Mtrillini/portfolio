@@ -35,6 +35,18 @@ muestra el glifo de respaldo y no se ve ninguna imagen rota.
 | `icon-design.png` | DESIGN |
 | `icon-tools.png` | HERRAMIENTAS |
 
+## Iconos del flujo (tarjeta de Sobre mí)
+
+Mismo formato: PNG transparente, cuadrado, exportado a 96 px.
+Se muestran a 46 px.
+
+| Archivo | Paso |
+| --- | --- |
+| `step-idea.png` | IDEA |
+| `step-uxui.png` | UX / UI |
+| `step-desarrollo.png` | DESARROLLO |
+| `step-producto.png` | PRODUCTO |
+
 ## Notas
 
 - Usar capturas reales del sistema o la web, no ilustraciones genéricas.

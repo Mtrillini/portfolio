@@ -205,8 +205,8 @@
 
     <article class="summary-item">
         <span class="summary-media" aria-hidden="true">
-            <img class="summary-icon" src="assets/icon-developer.png" alt="" width="48" height="48" decoding="async">
-            <span class="summary-glyph pink">&lt;/&gt;</span>
+            <img class="summary-icon icon-swap" src="assets/icon-developer.png" alt="" width="48" height="48" decoding="async">
+            <span class="icon-fallback pink">&lt;/&gt;</span>
         </span>
         <strong class="summary-title">DEVELOPER</strong>
         <p>PHP · MySQL<br>JavaScript · React</p>
@@ -214,8 +214,8 @@
 
     <article class="summary-item">
         <span class="summary-media" aria-hidden="true">
-            <img class="summary-icon" src="assets/icon-uxui.png" alt="" width="48" height="48" decoding="async">
-            <span class="summary-glyph lime">✎</span>
+            <img class="summary-icon icon-swap" src="assets/icon-uxui.png" alt="" width="48" height="48" decoding="async">
+            <span class="icon-fallback lime">✎</span>
         </span>
         <strong class="summary-title">UX/UI DESIGN</strong>
         <p>Figma · Wireframes<br>User Research</p>
@@ -223,8 +223,8 @@
 
     <article class="summary-item">
         <span class="summary-media" aria-hidden="true">
-            <img class="summary-icon" src="assets/icon-design.png" alt="" width="48" height="48" decoding="async">
-            <span class="summary-glyph pink">▣</span>
+            <img class="summary-icon icon-swap" src="assets/icon-design.png" alt="" width="48" height="48" decoding="async">
+            <span class="icon-fallback pink">▣</span>
         </span>
         <strong class="summary-title">DESIGN</strong>
         <p>Photoshop<br>Illustrator</p>
@@ -232,8 +232,8 @@
 
     <article class="summary-item">
         <span class="summary-media" aria-hidden="true">
-            <img class="summary-icon" src="assets/icon-tools.png" alt="" width="48" height="48" decoding="async">
-            <span class="summary-glyph lime">◉</span>
+            <img class="summary-icon icon-swap" src="assets/icon-tools.png" alt="" width="48" height="48" decoding="async">
+            <span class="icon-fallback lime">◉</span>
         </span>
         <strong class="summary-title">HERRAMIENTAS</strong>
         <p>Git · GitHub<br>VS Code · Postman</p>
@@ -273,16 +273,59 @@
 
         </div>
 
+        <!--
+            Los iconos del flujo son PNG en /assets.
+            Mientras no existan se muestra el glifo de al lado.
+        -->
+
         <div class="concept-card" data-reveal>
 
-            <span class="concept-star" aria-hidden="true">✳</span>
+            <div class="concept-top">
 
-            <ul>
-                <li><strong>DISEÑO CON PROPÓSITO</strong></li>
-                <li><strong>CÓDIGO QUE FUNCIONA</strong></li>
-            </ul>
+                <span class="concept-star" aria-hidden="true">✳</span>
 
-            <span class="concept-arrow" aria-hidden="true">➜</span>
+                <ul class="concept-claims">
+                    <li><strong>DISEÑO CON PROPÓSITO</strong></li>
+                    <li><strong>CÓDIGO QUE FUNCIONA</strong></li>
+                </ul>
+
+            </div>
+
+            <ol class="concept-flow">
+
+                <li class="concept-step">
+                    <span class="concept-icon" aria-hidden="true">
+                        <img class="step-icon icon-swap" src="assets/step-idea.png" alt="" width="48" height="48" decoding="async">
+                        <span class="icon-fallback">◍</span>
+                    </span>
+                    <span class="concept-name">IDEA</span>
+                </li>
+
+                <li class="concept-step">
+                    <span class="concept-icon" aria-hidden="true">
+                        <img class="step-icon icon-swap" src="assets/step-uxui.png" alt="" width="48" height="48" decoding="async">
+                        <span class="icon-fallback">▤</span>
+                    </span>
+                    <span class="concept-name">UX / UI</span>
+                </li>
+
+                <li class="concept-step">
+                    <span class="concept-icon" aria-hidden="true">
+                        <img class="step-icon icon-swap" src="assets/step-desarrollo.png" alt="" width="48" height="48" decoding="async">
+                        <span class="icon-fallback">&lt;/&gt;</span>
+                    </span>
+                    <span class="concept-name">DESARROLLO</span>
+                </li>
+
+                <li class="concept-step">
+                    <span class="concept-icon" aria-hidden="true">
+                        <img class="step-icon icon-swap" src="assets/step-producto.png" alt="" width="48" height="48" decoding="async">
+                        <span class="icon-fallback">➶</span>
+                    </span>
+                    <span class="concept-name">PRODUCTO</span>
+                </li>
+
+            </ol>
 
         </div>
 

@@ -9,7 +9,7 @@
    05 · Aparición de bloques al hacer scroll
    06 · Contenedores de imagen sin archivo todavía
    07 · Año del footer
-   08 · Iconos de la franja resumen
+   08 · Iconos (franja resumen y flujo)
    ========================================================= */
 
 (function () {
@@ -212,16 +212,16 @@
     if (anio) anio.textContent = new Date().getFullYear();
 
     /* =====================================================
-       08 · ICONOS DE LA FRANJA RESUMEN
+       08 · ICONOS (FRANJA RESUMEN Y FLUJO)
        Si el PNG existe reemplaza al glifo; si no, el glifo
        se queda y no se ve ninguna imagen rota.
        ===================================================== */
 
-    document.querySelectorAll('.summary-icon').forEach(function (icono) {
+    document.querySelectorAll('.icon-swap').forEach(function (icono) {
 
         function usarIcono() {
             icono.classList.add('is-ready');
-            var glifo = icono.parentNode.querySelector('.summary-glyph');
+            var glifo = icono.parentNode.querySelector('.icon-fallback');
             if (glifo) glifo.remove();
         }
 
