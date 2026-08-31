@@ -857,7 +857,7 @@ section[id] {
 }
 
 .concept-card {
-    --flow-gap: clamp(16px, 2.4vw, 34px);
+    --flow-gap: clamp(26px, 4.4vw, 58px);
 
     display: flex;
     flex-direction: column;
@@ -961,10 +961,11 @@ section[id] {
 }
 
 .concept-name {
-    font-family: var(--font-mono);
+    font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: .12em;
+    white-space: nowrap;
 }
 
 /* =========================================================
